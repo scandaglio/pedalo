@@ -1,4 +1,4 @@
-d3.json('media/data.json', function(data){
+d3.json('/pedalo/media/data.json', function(data){
 
   var rider_1 = data['rider_1'];
   var rider_2 = data['rider_2'];
