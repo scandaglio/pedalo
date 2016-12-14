@@ -561,8 +561,20 @@ h1 {
   text-align: center;
 }
 
-.cover .video-bg {
+.video-bg {
   position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rebeccapurple;
+  left: 0;
+}
+
+.video-bg video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .cover h1 {
