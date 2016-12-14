@@ -1,0 +1,617 @@
+body{
+  padding-top: 70px;
+  font-family: 'Noto Serif', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: black;
+  color: white;
+  background-image: url('../media/privato.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+}
+
+body:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top:0;
+  z-index: -1;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Space Mono', monospace;
+}
+
+#viz{
+  width: 100%;
+  height: 600px;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+.navbar {
+  font-family: 'Space Mono', monospace;
+  font-size: 28px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-brand{
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover{
+  color: white
+}
+
+#aboutus{
+  position: fixed;
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+
+  padding: 0px 15px;
+}
+
+#aboutus a{
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  transform: rotate(180deg);
+}
+
+
+#aboutus a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+#contactus{
+  position: fixed;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+
+  padding: 0px 15px;
+  /*background-color: black;*/
+}
+
+#contactus a{
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+#contactus a{
+  cursor: help;
+}
+
+#contactus a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav.navbar-right>li:not(:last-child){
+    border-bottom: 1px solid white;
+}
+
+.navbar-default .navbar-nav.navbar-right>li>a {
+    font-size: 14px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+    background-color: rgba(0,0,0,0.70);
+}
+
+.navbar-nav:not(.navbar-right) {
+  border-bottom: 1px solid white;
+}
+
+#navbar>ul li>a:before{
+  content: ""
+}
+
+#home{
+  min-height: 100vh;
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  padding-top:70px;
+  /*background-color: rgba(0,0,0,0.5);*/
+}
+
+#home > .row{
+  width: 100%;
+}
+.introHome{
+  color: white;
+  text-decoration: underline;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.homeControls{
+  text-align: left;
+  margin-top: 10px;
+}
+
+.placesList a{
+  color: white;
+  text-decoration: underline;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.placesList a:hover{
+  text-decoration: underline;
+}
+
+#home .btn{
+  border-radius: 0px;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#home .btn-default {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    transition: all 0.5s;
+}
+
+#home .btn-default:hover{
+  background-color: white;
+  color: black;
+}
+
+#home .btn:focus{
+  outline: none;
+}
+
+#home .btn.active, .btn:active{
+  box-shadow: none;
+}
+
+.btn-group.explore{
+  margin-bottom: 25px;
+}
+.page #map{
+  height: 300px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.placeList #map{
+  height: 300px;
+  border: 1px solid white;
+}
+
+.placeList{
+  font-family: 'Space Mono', monospace;
+}
+
+.page .table{
+  font-family: 'Space Mono', monospace;
+}
+
+.placeList h5,
+.pano h5{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.placeList .table>thead>tr>th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.placeList .table .placeName {
+  font-size: 17px;
+}
+
+.placeList .table{
+  margin-top: 20px;
+}
+.placeList .table th,
+.placeList .table td {
+  text-align: center;
+}
+
+.page .table th,
+.page .table td {
+  text-align: center;
+}
+
+.placeList .table a {
+  color: white;
+  text-decoration: none;
+}
+
+.placeList .table>tbody>tr>td,
+.placeList .table>tbody>tr>th,
+.placeList .table>tfoot>tr>td,
+.placeList .table>tfoot>tr>th,
+.placeList .table>thead>tr>td,
+.placeList .table>thead>tr>th{
+  vertical-align: middle;
+}
+
+.table-hover>tbody>tr,
+.placeList .table-hover>tbody>tr a{
+  transition: all 0.5s;
+}
+.placeList .table-hover>tbody>tr:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.placeList .table-hover>tbody>tr:hover a {
+    color: black;
+}
+
+.placeList .desc{
+  font-size: 15px;
+}
+
+.placeList .table-bordered {
+    border: 1px solid #fff;
+}
+
+.placeList .table-bordered>tbody>tr>td,
+.placeList .table-bordered>tbody>tr>th,
+.placeList .table-bordered>tfoot>tr>td,
+.placeList .table-bordered>tfoot>tr>th,
+.placeList .table-bordered>thead>tr>td,
+.placeList .table-bordered>thead>tr>th {
+  border: 1px solid #fff;
+ }
+
+ .page .table-bordered {
+     border: 1px solid #000;
+ }
+
+ .page .table-bordered>tbody>tr>td,
+ .page .table-bordered>tbody>tr>th,
+ .page .table-bordered>tfoot>tr>td,
+ .page .table-bordered>tfoot>tr>th,
+ .page .table-bordered>thead>tr>td,
+ .page .table-bordered>thead>tr>th {
+   border: 1px solid #000;
+  }
+
+#pano {
+  width: 100%;
+  height: calc(100% + 25px);
+}
+
+#panoContainer{
+  position: fixed;
+  top:0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pano #map{
+  height: 200px;
+  margin: 0 -15px;
+}
+
+.panoInfo{
+  font-size: 16px;
+  font-family: 'Space Mono', monospace;
+}
+
+.panoInfo>.panoName{
+  text-transform: uppercase;
+  margin: 0 0 -5px;
+  font-weight: bold;
+}
+
+.pano .border{
+  border: 1px solid white;
+}
+
+.pano .arrows{
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.pano .arrows>a{
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+.pano .arrows>a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.pano .flex{
+  display: block;
+}
+
+.normalWeight{
+  font-weight: normal!important;
+}
+
+.page p{
+  font-size: 18px;
+}
+
+.page a{
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.page a:hover{
+  text-decoration: line-through;
+}
+
+.page .img-about{
+  width: 400px;
+  margin-left: 0px;
+}
+
+.page .img-incipit{
+  margin-left: 0px;
+}
+
+.page .dida{
+  font-family: 'Space Mono', monospace;
+  margin: 0px 0px 10px 0px;
+  font-size: 11px;
+}
+.page blockquote{
+  border-left: none;
+}
+.page blockquote p{
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.affix{
+  position: static;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.affix-top{
+  position: static;
+  width: auto;
+}
+
+
+.placeName{
+  cursor: e-resize;
+}
+
+.controls{
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  flex-direction: row;
+  -webkit-flex-direction: row;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
+  text-align: center;
+  border: none;
+}
+
+.controls .btnContPlay,
+.controls .btnContFocus{
+  width: 100%;
+  padding: 5px 0px;
+}
+
+.mapboxgl-popup {
+    max-width: 300px;
+    color: black;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+}
+
+.mapboxgl-popup .popupTitle{
+  font-size: 16px;
+}
+
+.mapboxgl-popup .popupSubTitle{
+  font-size: 13px;
+}
+
+p.focusInfo{
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+
+#markdown-toc{
+  list-style-type: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  position: fixed;
+  left: 58.3%;
+}
+
+#markdown-toc li{
+  margin-bottom: 5px;
+}
+
+#markdown-toc li a{
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  transition: all 0.5s;
+  color: black;
+}
+
+#markdown-toc li a:hover{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 768px){
+  #contactus, #aboutus{
+    display: flex;
+    display: -webkit-flex;
+  }
+
+  #navbar .navbar-right {
+      display: none!important;
+  }
+
+  .navbar-fixed-bottom .navbar-collapse,
+  .navbar-fixed-top .navbar-collapse {
+      background-color: transparent;
+  }
+
+  #navbar>ul:not(.navbar-right) li>a:before{
+    content: "| "
+  }
+
+  .navbar-nav:not(.navbar-right) {
+    border-bottom: none;
+  }
+
+  .pano .flex{
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+  }
+
+  .homeControls{
+    text-align: right;
+  }
+
+  .panoInfo{
+    font-size: 25px;
+  }
+
+}
+
+@media (min-width: 992px){
+  .page blockquote{
+    margin: 0 -150px 15px 25px;
+  }
+  .page .img-about,
+  .page .img-incipit{
+    margin-left: 45px;
+  }
+}
+
+@media (min-width: 1200px){
+  .container {
+      width: inherit;
+  }
+}
+
+@media (min-width: 769px){
+  .affix{
+    position: fixed;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px){
+  #markdown-toc{
+    position: initial;
+    text-align: center;
+    padding: 0px;
+  }
+}

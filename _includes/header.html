@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand{% if page.url != '/' %} normalWeight {% endif %}" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% if page.title == 'Places' %}
+            <li>
+              <a class="" href="{{ "/places" | prepend: site.baseurl }}">luoghi</a>
+            </li>
+            {% endif %}
+            {% if page.layout == 'timemachine' %}
+            <li>
+              <a class="normalWeight" href="{{ "/places/" | prepend: site.baseurl }}">luoghi</a>
+            </li>
+            {% endif %}
+            {% if page.layout == 'placelist' %}
+            <li>
+              <a class="normalWeight" href="{{ "/places" | prepend: site.baseurl }}">luoghi</a>
+            </li>
+            <li>
+              <a class="" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            </li>
+            {% endif%}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ "/about" | prepend: site.baseurl }}">Info</a></li>
+            <li><a href="mailto:hello@calib.ro">offtopic@autoproduzioni.org</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
