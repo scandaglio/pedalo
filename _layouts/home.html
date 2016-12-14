@@ -3,7 +3,7 @@ layout: default
 ---
 <div id="home" class="container">
   <div class="video-bg">
-      <video autoplay loop muted poster="path/to/poster.jpg">
+      <video autoplay loop muted>
           <source src="./media/et.mp4" type="video/mp4">
       </video>
   </div>
@@ -16,7 +16,7 @@ layout: default
         <a class="btn btn-default" href="{{ "/compendio" | prepend: site.baseurl }}" role="button">compendio</a>
     </p>
       <p>
-        <a class="btn btn-default" href="{{ "/data" | prepend: site.baseurl }}" role="button">dati</a>
+        <a class="btn btn-default disabled" href="{{ "/data" | prepend: site.baseurl }}" role="button">dati</a>
     </p>
     <p>
         <a class="btn btn-default" href="{{ "/about" | prepend: site.baseurl }}" role="button">info</a>
@@ -33,7 +33,7 @@ layout: default
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col-xs-8">
       <div class="intro">
@@ -52,4 +52,4 @@ layout: default
       <h1>Easy Rider</h1>
     </div>
   </div>
-</div>
+</div> -->
