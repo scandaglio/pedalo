@@ -561,7 +561,7 @@ h1 {
   text-align: center;
 }
 
-.cover .video-bg {
+.video-bg {
   position: fixed;
   top: 0;
   width: 100vw;
@@ -570,7 +570,7 @@ h1 {
   left: 0;
 }
 
-.cover video {
+.video-bg video {
     min-width: 100%;
     min-height: 100%;
     width: auto;
