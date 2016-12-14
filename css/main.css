@@ -568,6 +568,18 @@ h1 {
 
 .cover .video-bg {
   position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rebeccapurple;
+  left: 0;
+}
+
+.cover video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .cover h1 {
