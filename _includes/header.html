@@ -11,24 +11,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            {% if page.title == 'Places' %}
+            {% if page.layout != 'home' %}
             <li>
-              <a class="" href="{{ "/places" | prepend: site.baseurl }}">luoghi</a>
+              <a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a>
             </li>
             {% endif %}
-            {% if page.layout == 'timemachine' %}
-            <li>
-              <a class="normalWeight" href="{{ "/places/" | prepend: site.baseurl }}">luoghi</a>
-            </li>
-            {% endif %}
-            {% if page.layout == 'placelist' %}
-            <li>
-              <a class="normalWeight" href="{{ "/places" | prepend: site.baseurl }}">luoghi</a>
-            </li>
-            <li>
-              <a class="" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-            </li>
-            {% endif%}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ "/about" | prepend: site.baseurl }}">Info</a></li>
