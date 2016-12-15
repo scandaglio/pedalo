@@ -8,7 +8,8 @@
     {% include header.html %}
 
     {{ content }}
-
+    
+    {% include side.html %}
     <script src="{{ "/assets/jquery/jquery.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/assets/jquery-mousewheel/jquery.mousewheel.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/assets/bootstrap/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
