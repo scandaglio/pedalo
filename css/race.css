@@ -44,7 +44,7 @@ body:after {
 .vizRider{
   width: 100%;
   overflow: hidden;
-
+  padding-top: 17px;
 }
 
 .vizRider:after{
