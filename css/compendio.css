@@ -1,0 +1,34 @@
+
+#compendio h2{
+  font-size: 48px;
+  font-weight: 600;
+  text-decoration: underline;
+  line-height: normal;r
+}
+
+#compendio h3 {
+  font-family: 'Noto Serif', serif;
+  text-decoration: line-through;
+  font-size: 32px;
+  font-style: italic;
+  text-align: right;
+  margin: 0;
+}
+
+#compendio h4 {
+    border: 1px solid white;
+    font-family: "space Mono", monospace;
+    display: inline-block;
+    width: auto;
+    margin: 5px -15px;
+    padding: 15px;
+}
+
+#compendio h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#compendio p {
+  font-size: 26px;
+}

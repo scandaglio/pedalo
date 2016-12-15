@@ -4,12 +4,11 @@ title: About
 permalink: /about/
 #custom-js:
 #  - race.js
-#custom-css: race.css
+custom-css: about.css
 ---
 
-### Info
-
 _SCANDAGLIO_ è un progetto di ricerca e di sperimentazione di linguaggi che si occupa della città di Milano.
+{: .introHome}
 
 Ci troviamo, a partire da ottobre e fino al mese di maggio 2017, ogni martedì alle ore 19.30 a [Piano Terra](http://pianoterralab.org) (via Federico Confalonieri, 3) per proseguire in forma condivisa il percorso.
 

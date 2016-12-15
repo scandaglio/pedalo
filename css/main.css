@@ -542,41 +542,6 @@ h1 {
   font-size: 54px;
 }
 
-/* .compendio */
-/*
-h2{
-  font-size: 48px;
-  font-weight: 600;
-  text-decoration: underline;
-  line-height: normal;r
-}
-
-h3 {
-  font-family: 'Noto Serif', serif;
-  text-decoration: line-through;
-  font-size: 32px;
-  font-style: italic;
-  text-align: right;
-  margin: 0;
-}
-
-h4 {
-    border: 1px solid white;
-    font-family: "space Mono", monospace;
-    display: inline-block;
-    width: auto;
-    margin: 5px -15px;
-    padding: 15px;
-}
-
-h5 {
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: 26px;
-}*/
 
 .cover {
   width: 100vw;
@@ -598,6 +563,7 @@ p {
     min-height: 100%;
     width: auto;
     height: auto;
+    opacity: 0.7;
 }
 
 .cover h1 {

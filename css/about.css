@@ -1,42 +1,23 @@
-body{
-  color: black!important;
-  background-color:white;
-  background-image: none!important;
+#about p{
+  font-size: 20px;
 }
 
-body:after {
-  background-color: transparent;
+#about .introHome{
+  color: white;
+  text-decoration: underline;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-left: -20%;
+  max-width: 90%;
 }
 
-#aboutus a,
-#contactus a,
-#contactus a:hover,
-#aboutus a:hover {
-  color: black!important;
+#about a{
+  color: white;
+  text-decoration: underline;
 }
 
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav>li>a{
-  color: black!important;
-}
-
-.navbar-default {
-  background-color: white;
-  border-bottom: 1px solid black!important;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: black;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: black;
-}
-
-.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-    background-color: white;
-}
-
-.navbar-default .navbar-nav.navbar-right>li:not(:last-child) {
-    border-bottom: 1px solid black;
+#about a:hover{
+  color: white;
+  text-decoration: line-through;
 }

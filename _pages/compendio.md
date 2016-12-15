@@ -4,7 +4,7 @@ title: Compendio
 permalink: /compendio/
 #custom-js:
 #  - race.js
-#custom-css: race.css
+custom-css: compendio.css
 ---
 
 <div class="row">
@@ -41,7 +41,7 @@ permalink: /compendio/
 				<td>la logistica</td>
 				<td>i saperi</td>
 			</tr>
-			
+
 		</table>
 	</div>
 </div>
@@ -88,7 +88,7 @@ permalink: /compendio/
 	<div class="clearfix"></div>
 	<div class="col-xs-7 col-xs-push-1">
 		<p>Il proprietario di Foodora è una società del nord Europa che ha sede a Berlino. Fondata inizialmente in Svezia nel 2008 da Niklas Ostberg si è espansa fino al 2011 diventando Delivery Hero Network. Attualmente il suo valore è di 3,1 miliardi di dollari, opera in 33 paesi; conta almeno 3000 dipendenti e migliaia di lavoratori in bicicletta; i ristoranti affiliati sono 271.000 circa e i clienti 17 milioni per una cifra di 127 milioni di ordini.<br/>
-		Viene inaugurata la prima sede italiana di Foodora a Milano il 10 agosto del 2015. Diretta da due ragazzi classe '87 '88. Coinvolge circa 200 lavoratori nel capoluogo piemontese e circa 300 in quello lombardo. Vive un periodo di forte espansione: gli ordini sono aumentati del 75% in un anno. Si stima che i lavoratori foodora abbiano coperto la distanza di 295.000 chilometri (9 volte il giro intorno alla Terra). </p> 
+		Viene inaugurata la prima sede italiana di Foodora a Milano il 10 agosto del 2015. Diretta da due ragazzi classe '87 '88. Coinvolge circa 200 lavoratori nel capoluogo piemontese e circa 300 in quello lombardo. Vive un periodo di forte espansione: gli ordini sono aumentati del 75% in un anno. Si stima che i lavoratori foodora abbiano coperto la distanza di 295.000 chilometri (9 volte il giro intorno alla Terra). </p>
 	</div>
 </div>
 <div class="row" style="background-image: url('../media/piatto70_3.jpg');background-position: center 200px; background-repeat: no-repeat;">
@@ -130,7 +130,7 @@ permalink: /compendio/
 </div>
 
 <div class="row" style="background-color: #8116f2; padding-top: 120px; margin-top: -30px;">
-	
+
 	<div class="col-xs-8 col-xs-push-1"><h4>Clienti-Utenti</h4>
 		<p style="position: relative; z-index: 10;">Utilizzando il sito internet della società o l'applicazione per i dispositivi mobili, i clienti visualizzano i ristoranti vicino a loro e possono fare un ordine, pagando online. L'ordine viene preparato dal ristorante, ritirato dal corriere e consegnato al cliente finale, entro 30 minuti, o almeno questo è quanto viene dichiarato sul sito o nella presentazione dell’app nel momento in cui viene scaricata dallo store. La promessa è quella della comodità, del confort e della velocità, oltre che della garanzia sulla qualità del servizio. In realtà le cose non stanno proprio così, visto le condizioni igienico-sanitarie, spesso i ritardi si accumulano durante le attese interminabili di fronte ai ristoranti, soprattutto negli orari di punta, che sono i momenti in cui fioccano il maggior numero di ordini. Chi usa questo tipo di servizi? Non sono usciti ancora dati interessanti e studi di settore specifici, perché si tratta di un settore giovane, benché la figura del pony-express sia un’immagine piuttosto novecentesca. Dalle prime indagini l’avatar che corrisponde all’utente medio è un millennials che ha un rapporto quotidiano e disinvolto con la tecnologia collocabile in una fascia anagrafica che va da 29 ai 35 anni. Seguono a ruota i giovanissimi dai 15 ai 25 anni, appartenenti alla generazione Z, coloro che sono cresciuti durante la fase social, e la generazione X, soprattutto se cittadini e aventi un titolo di scuola di media superiore e quindi un rapporto con internet e la filosofia smart più prossimo. La consegna al singolo utente costa il 2,90 di base. Ad essa vengono poi applicate delle variazioni in base alla fascia oraria, se la richiesta è fatta dopo l’orario di massimo traffico di ordinazioni, quando meno rider sono disponibili. Il maggior numero di consegne viene effettuato nelle zone centrali della città. In zona 1 o nelle sue aree limitrofe. Questo ci dice che è un servizio partito come servizio di lusso che sta cercando di radicarsi come fenomeno di costume per allargare e diversificare il proprio target. Lontano però dall’ottica della cucina gourmet la maggior parte dei pasti consegnati sono sushi dozzinale, pizza, hamburger e cibo cinese.</p>
 	</div>
