@@ -4,7 +4,7 @@ title: Race
 permalink: /race/
 custom-js:
   - race.js
-#custom-css: race.css
+custom-css: race.css
 ---
 
 > _SCANDAGLIO_ è un progetto di ricerca e di sperimentazione di linguaggi che si occupa della città di Milano.

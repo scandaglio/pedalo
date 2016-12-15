@@ -4,40 +4,43 @@ d3.json('/pedalo/media/data.json', function(data){
   var rider_2 = data['rider_2'];
 
   var width = 10000,
-      height = 100;
+      height = 200;
 
-  var svg = d3.select('#viz').append('svg')
+  var contWidth = $('#rider_1 .vizRider').width();
+
+
+  var svg = d3.select('#rider_1 .vizRider').append('svg')
     .attr("width", width)
     .attr("height", height)
 
-  var svg_2 = d3.select('#viz').append('svg')
+  var svg_2 = d3.select('#rider_2 .vizRider').append('svg')
     .attr("width", width)
     .attr("height", height)
 
-  var timeCounter = d3.select('#viz').append('div')
+  var timeCounter = d3.select('#timer h3')
 
   // rider 1
-  var distanceCounter = d3.select('#viz').append('div')
-  var deliveryCounter = d3.select('#viz').append('div')
-  var restaurantsCounter = d3.select('#viz').append('div')
-  var foodoraCounter = d3.select('#viz').append('div')
-  var riderCounter = d3.select('#viz').append('div')
+  var distanceCounter = d3.select('#rider_1 .km').text('0.000 km')
+  var deliveryCounter = d3.select('#rider_1 .delivery').text('0')
+  var restaurantsCounter = d3.select('#rider_1 .restaurant').text('0.00 €')
+  var foodoraCounter = d3.select('#rider_1 .company').text('0.00 €')
+  var riderCounter = d3.select('#rider_1 .rider').text('0.00 €')
 
   // rider 2
-  var distanceCounter_2 = d3.select('#viz').append('div')
-  var deliveryCounter_2 = d3.select('#viz').append('div')
-  var restaurantsCounter_2 = d3.select('#viz').append('div')
-  var foodoraCounter_2 = d3.select('#viz').append('div')
-  var riderCounter_2 = d3.select('#viz').append('div')
+  var distanceCounter_2 = d3.select('#rider_2 .km').text('0.000 km')
+  var deliveryCounter_2 = d3.select('#rider_2 .delivery').text('0')
+  var restaurantsCounter_2 = d3.select('#rider_2 .restaurant').text('0.00 €')
+  var foodoraCounter_2 = d3.select('#rider_2 .company').text('0.00 €')
+  var riderCounter_2 = d3.select('#rider_2 .rider').text('0.00 €')
 
   svg.append('g')
-    .attr("transform", "translate(" + $('#viz').width()/2 +",0)")
+    .attr("transform", "translate(" + contWidth/3 +",0)")
     .append('g')
     .attr("class","gPoint")
     .attr("transform", "translate(0,0)")
 
   svg_2.append('g')
-    .attr("transform", "translate(" + $('#viz').width()/2 +",0)")
+    .attr("transform", "translate(" + contWidth/3 +",0)")
     .append('g')
     .attr("class","gPoint")
     .attr("transform", "translate(0,0)")
@@ -117,69 +120,214 @@ d3.json('/pedalo/media/data.json', function(data){
     .domain(rider_2.map(function(d){return d.timer}))
     .range(timerScaleRange_2);
 
-  var point = svg.append('circle')
-      .attr('cx', $('#viz').width()/2)
-      .attr('cy', height/2)
-      .attr('r',4.5)
-      .attr('fill', '#f00')
 
-  var points = svg.select('.gPoint').selectAll('.points')
-    .data(rider_1)
-    .enter()
-    .append('circle')
-    .attr('class', 'points')
-    .attr('cx', function(d){
-      return kmScale(d.distanceComulative)
-    })
-    .attr('cy', height/2)
-    .attr('r',5)
-    .attr('fill', 'white')
-    .attr('stroke', function(d){
-      return colorScale(d.type)
-    })
-    .each(function(d){
-
-      $(this).popover({
-                'container': 'body',
-                'title': d.type,
-                'content': d.time
-            });
-    })
-
-    var point_2 = svg_2.append('circle')
-        .attr('cx', $('#viz').width()/2)
-        .attr('cy', height/2)
-        .attr('r',4.5)
-        .attr('fill', '#f00')
-
-    var points_2 = svg_2.select('.gPoint').selectAll('.points')
-      .data(rider_2)
-      .enter()
-      .append('circle')
-      .attr('class', 'points')
-      .attr('cx', function(d){
-        return kmScale(d.distanceComulative)
-        //return kmScale_2(d.distanceComulative)
-      })
-      .attr('cy', height/2)
-      .attr('r',5)
+  var rect = svg.append('rect')
+      .attr('x', contWidth/3 -8)
+      .attr('y', height/2 -15)
       .attr('fill', 'white')
-      .attr('stroke', function(d){
-        return colorScale(d.type)
-      })
-      .each(function(d){
+      .attr('width', 30)
+      .attr('height', 30)
 
-        $(this).popover({
-                  'container': 'body',
-                  'title': d.type,
-                  'content': d.time
-              });
+  var point = svg.append('text')
+      .attr('x', contWidth/3 -6)
+      .attr('y', height/2 +5)
+      .attr('fill', '#d82066')
+      .attr('class', 'fa vizBicycle')
+      .text('\uf206')
+
+    var line = svg.select('.gPoint')
+      .append('line')
+      .attr('x1',0)
+      .attr('y1',height/2)
+      .attr('x2',kmScale(totKm))
+      .attr('y2',height/2)
+      .attr('stroke-dasharray', '3,3')
+      .attr('stroke','black')
+
+    var rects = svg.select('.gPoint').selectAll('.bckText')
+      .data(rider_1)
+      .enter()
+      .append('rect')
+      .attr('class', 'bckText')
+      .attr('x', function(d){
+        return kmScale(d.distanceComulative)-10;
       })
+      .attr('y', height/2 -10)
+      .attr('width', 20)
+      .attr('height', 20)
+      .attr('fill', 'white')
+
+    var icons = svg.select('.gPoint').selectAll('.icons')
+      .data(rider_1)
+      .enter()
+      .append('text')
+      .attr('class', 'icons fa')
+      .attr('x', function(d){
+        return kmScale(d.distanceComulative) -6;
+      })
+      .attr('y', height/2 + 5)
+      .attr('fill', 'black')
+      .text(function(d){
+        if(d.type == 'home'){
+          return '\uf015';
+        }else if(d.type == 'restaurant'){
+          return '\uf0f5';
+        }else if(d.type == 'client'){
+          return '\uf182';
+        }
+      })
+
+      var desc = svg.select('.gPoint')
+        .append('g')
+        .attr('transform', 'translate(0,' + -20 +')')
+        .selectAll('.desc')
+        .data(rider_1)
+        .enter()
+        .append('text')
+        .attr('class', 'desc')
+        .attr('text-anchor', 'middle')
+        .attr('x', function(d){
+          return kmScale(d.distanceComulative);
+        })
+        .attr('y', height/2)
+        .each(function(d){
+          var text = d3.select(this);
+
+          if(d.type == 'restaurant'){
+
+            var orders = d.items.length>1?d.items.length + ' ordini':d.items.length + ' ordine';
+            var quantity = d3.sum(d.items, function(f){return f.quantity}) + ' porzioni';
+            var cost = d3.sum(d.items, function(f){return f.price}) + '€ totale';
+
+            text.append('tspan')
+              .text(cost)
+              .attr('x', kmScale(d.distanceComulative))
+
+            text.append('tspan')
+              .text(quantity)
+              .attr('dy', -17)
+              .attr('x', kmScale(d.distanceComulative))
+
+            text.append('tspan')
+              .text(orders)
+              .attr('dy', -17)
+              .attr('x', kmScale(d.distanceComulative))
+
+          }else if(d.type == 'client'){
+
+            var cont = d.items[0].tip?d.items[0].tip + '€ di mancia!':'niente mancia...';
+            text.append('tspan')
+              .text(cont)
+          }
+
+        })
+
+
+    var rect_2 = svg_2.append('rect')
+        .attr('x', contWidth/3 -8)
+        .attr('y', height/2 -15)
+        .attr('fill', 'white')
+        .attr('width', 30)
+        .attr('height', 30)
+
+    var point_2 = svg_2.append('text')
+        .attr('x', contWidth/3 -6)
+        .attr('y', height/2 +5)
+        .attr('fill', '#d82066')
+        .attr('class', 'fa vizBicycle')
+        .text('\uf206')
+
+      var line_2 = svg_2.select('.gPoint')
+        .append('line')
+        .attr('x1',0)
+        .attr('y1',height/2)
+        .attr('x2',kmScale(totKm_2))
+        .attr('y2',height/2)
+        .attr('stroke-dasharray', '3,3')
+        .attr('stroke','black')
+
+      var rects_2 = svg_2.select('.gPoint').selectAll('.bckText')
+        .data(rider_2)
+        .enter()
+        .append('rect')
+        .attr('class', 'bckText')
+        .attr('x', function(d){
+          return kmScale(d.distanceComulative)-10;
+        })
+        .attr('y', height/2 -10)
+        .attr('width', 20)
+        .attr('height', 20)
+        .attr('fill', 'white')
+
+      var icons_2 = svg_2.select('.gPoint').selectAll('.icons')
+        .data(rider_2)
+        .enter()
+        .append('text')
+        .attr('class', 'icons fa')
+        .attr('x', function(d){
+          return kmScale(d.distanceComulative) -6;
+        })
+        .attr('y', height/2 + 5)
+        .attr('fill', 'black')
+        .text(function(d){
+          if(d.type == 'home'){
+            return '\uf015';
+          }else if(d.type == 'restaurant'){
+            return '\uf0f5';
+          }else if(d.type == 'client'){
+            return '\uf182';
+          }
+        })
+
+        var desc_2 = svg_2.select('.gPoint')
+          .append('g')
+          .attr('transform', 'translate(0,' + -20 +')')
+          .selectAll('.desc')
+          .data(rider_2)
+          .enter()
+          .append('text')
+          .attr('class', 'desc')
+          .attr('text-anchor', 'middle')
+          .attr('x', function(d){
+            return kmScale(d.distanceComulative);
+          })
+          .attr('y', height/2)
+          .each(function(d){
+            var text = d3.select(this);
+
+            if(d.type == 'restaurant'){
+
+              var orders = d.items.length>1?d.items.length + ' ordini':d.items.length + ' ordine';
+              var quantity = d3.sum(d.items, function(f){return f.quantity}) + ' porzioni';
+              var cost = d3.sum(d.items, function(f){return f.price}) + '€ totale';
+
+              text.append('tspan')
+                .text(cost)
+                .attr('x', kmScale(d.distanceComulative))
+
+              text.append('tspan')
+                .text(quantity)
+                .attr('dy', -17)
+                .attr('x', kmScale(d.distanceComulative))
+
+              text.append('tspan')
+                .text(orders)
+                .attr('dy', -17)
+                .attr('x', kmScale(d.distanceComulative))
+
+            }else if(d.type == 'client'){
+
+              var cont = d.items[0].tip?d.items[0].tip + '€ di mancia!':'niente mancia...';
+              text.append('tspan')
+                .text(cont)
+            }
+
+          })
 
     var friction = 1;
     var x = 0;
     var formatTime = d3.timeFormat("%H:%M:%S");
-    $('#viz').mousewheel(function(evt, chg) {
+    $('#race').mousewheel(function(evt, chg) {
         evt.preventDefault();
 
         x = x - chg;
@@ -192,11 +340,11 @@ d3.json('/pedalo/media/data.json', function(data){
           timeCounter.text(formatTime(actualDate))
 
           //rider_1
-          distanceCounter.text(Math.round(kmScale.invert(timerScale(tmp)))/1000 + ' km.')
+          distanceCounter.text(Math.round(kmScale.invert(timerScale(tmp)))/1000 + ' km')
           svg.select('.gPoint').attr("transform", "translate(" + -timerScale(tmp) +",0)")
 
           //rider_2
-          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km.')
+          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km')
           svg_2.select('.gPoint').attr("transform", "translate(" + -timerScale_2(tmp) +",0)")
 
 
@@ -218,7 +366,7 @@ d3.json('/pedalo/media/data.json', function(data){
           //svg.select('.gPoint').attr("transform", "translate(" + -timerScale(tmp) +",0)")
 
           //rider_2
-          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km.')
+          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km')
           svg_2.select('.gPoint').attr("transform", "translate(" + -timerScale_2(tmp) +",0)")
 
         }else{
@@ -234,7 +382,7 @@ d3.json('/pedalo/media/data.json', function(data){
           var pointsDone = rider_1.slice(0,bisecIndex);
 
           var deliveries = pointsDone.filter(function(d){return d.type == 'client'}).length;
-          deliveryCounter.text('consegne: ' + deliveries);
+          deliveryCounter.text(deliveries);
 
           var restaurants = d3.sum(pointsDone.map(function(d){
             if(d.type == 'restaurant'){
@@ -244,7 +392,7 @@ d3.json('/pedalo/media/data.json', function(data){
 
           restaurants = restaurants - (restaurants*.30)
 
-          restaurantsCounter.text("totale ristoranti: " + d3.format(".2f")(restaurants) + '€')
+          restaurantsCounter.text(d3.format(".2f")(restaurants) + ' €')
 
           var foodora = d3.sum(pointsDone.map(function(d){
             if(d.type == 'restaurant'){
@@ -252,7 +400,7 @@ d3.json('/pedalo/media/data.json', function(data){
             }
           }),function(d){return d})*0.30
 
-          foodoraCounter.text("totale foodora: " + d3.format(".2f")(foodora) + '€')
+          foodoraCounter.text(d3.format(".2f")(foodora) + ' €')
 
           var rider = d3.sum(pointsDone.map(function(d){
             if(d.type == 'client'){
@@ -260,14 +408,14 @@ d3.json('/pedalo/media/data.json', function(data){
             }
           }),function(d){return d}) + (deliveries*3.6)
 
-          riderCounter.text("totale rider: " + d3.format(".2f")(rider) + '€')
+          riderCounter.text(d3.format(".2f")(rider) + ' €')
 
           if(kmScale.invert(timerScale(tmp))<=totKm ){
-            distanceCounter.text(Math.round(kmScale.invert(timerScale(tmp)))/1000 + ' km.')
+            distanceCounter.text(Math.round(kmScale.invert(timerScale(tmp)))/1000 + ' km')
             svg.select('.gPoint').attr("transform", "translate(" + -timerScale(tmp) +",0)")
           }else {
             var x2 = kmScale(totKm)
-            distanceCounter.text(Math.round(totKm)/1000 + ' km.')
+            distanceCounter.text(Math.round(totKm)/1000 + ' km')
             svg.select('.gPoint').attr("transform", "translate(" + -x2 +",0)")
           }
 
@@ -278,7 +426,7 @@ d3.json('/pedalo/media/data.json', function(data){
           var pointsDone_2 = rider_2.slice(0,bisecIndex_2);
 
           var deliveries_2 = pointsDone_2.filter(function(d){return d.type == 'client'}).length;
-          deliveryCounter_2.text('consegne: ' + deliveries_2);
+          deliveryCounter_2.text(deliveries_2);
 
           var restaurants_2 = d3.sum(pointsDone_2.map(function(d){
             if(d.type == 'restaurant'){
@@ -288,7 +436,7 @@ d3.json('/pedalo/media/data.json', function(data){
 
           restaurants_2 = restaurants_2 - (restaurants_2*.30)
 
-          restaurantsCounter_2.text("totale ristoranti: " + d3.format(".2f")(restaurants_2) + '€')
+          restaurantsCounter_2.text(d3.format(".2f")(restaurants_2) + ' €')
 
           var foodora_2 = d3.sum(pointsDone_2.map(function(d){
             if(d.type == 'restaurant'){
@@ -296,7 +444,7 @@ d3.json('/pedalo/media/data.json', function(data){
             }
           }),function(d){return d})*0.30
 
-          foodoraCounter_2.text("totale foodora: " + d3.format(".2f")(foodora_2) + '€')
+          foodoraCounter_2.text(d3.format(".2f")(foodora_2) + ' €')
 
           var rider_2_ = d3.sum(pointsDone_2.map(function(d){
             if(d.type == 'client'){
@@ -304,9 +452,9 @@ d3.json('/pedalo/media/data.json', function(data){
             }
           }),function(d){return d}) + (deliveries_2*3.6)
 
-          riderCounter_2.text("totale rider: " + d3.format(".2f")(rider_2_) + '€')
+          riderCounter_2.text(d3.format(".2f")(rider_2_) + ' €')
 
-          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km.')
+          distanceCounter_2.text(Math.round(kmScale.invert(timerScale_2(tmp)))/1000 + ' km')
           svg_2.select('.gPoint').attr("transform", "translate(" + -timerScale_2(tmp) +",0)")
         }
 

@@ -550,7 +550,9 @@ h1 {
   font-size: 54px;
 }
 
-/* .compendio */h2{
+/* .compendio */
+/*
+h2{
   font-size: 48px;
   font-weight: 600;
   text-decoration: underline;
@@ -582,7 +584,7 @@ h5 {
 
 p {
   font-size: 26px;
-}
+}*/
 
 .cover {
   width: 100vw;

@@ -1,0 +1,94 @@
+body{
+  color: black!important;
+  background-color:white;
+  background-image: none!important;
+}
+
+body:after {
+  background-color: transparent;
+}
+
+#aboutus a,
+#contactus a,
+#contactus a:hover,
+#aboutus a:hover {
+  color: black!important;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a{
+  color: black!important;
+}
+
+.navbar-default {
+  background-color: white;
+  border-bottom: 1px solid black!important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: black;
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    background-color: white;
+}
+
+.navbar-default .navbar-nav.navbar-right>li:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.vizRider{
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.vizRider:after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:0;
+  box-shadow: inset 50px -1px 28px -33px #FFFFFF,  inset -80px -1px 28px -33px #FFFFFF;
+}
+
+#timer{
+  text-align: center;
+}
+#timer h3{
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#race h4{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#race p{
+  font-size: 16px;
+  font-family: 'Space Mono', monospace;
+}
+
+#race .fa{
+  min-width: 21px;
+}
+
+#race .desc{
+  font-family: 'Space Mono', monospace;
+}
+
+.fa.vizBicycle{
+  font-size: 20px!important;
+}
