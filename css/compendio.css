@@ -63,3 +63,16 @@
   background-color: white;
   color: black;
 }
+
+#compendio img.fit{
+  max-width: 100%;
+}
+
+#compendio img.ml{
+  margin-left: 15%;
+}
+
+#compendio .pink{
+  background-color: pink;
+  padding: 30px;
+}
