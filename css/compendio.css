@@ -8,7 +8,6 @@
 
 #compendio h3 {
   font-family: 'Noto Serif', serif;
-  text-decoration: line-through;
   font-size: 32px;
   font-style: italic;
   text-align: right;
@@ -30,5 +29,37 @@
 }
 
 #compendio p {
-  font-size: 26px;
+  font-size: 22px;
+}
+
+#markdown-toc{
+  list-style-type: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  position: fixed;
+  left: -20px;
+  top:100px;
+}
+
+#markdown-toc ul{
+  list-style-type: none;
+}
+
+#markdown-toc li{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#markdown-toc li a{
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  transition: all 0.5s;
+  color: white;
+}
+
+#markdown-toc li a:hover{
+  text-decoration: none;
+  background-color: white;
+  color: black;
 }
